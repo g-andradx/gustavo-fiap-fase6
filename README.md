@@ -292,7 +292,7 @@ Durante o desenvolvimento foram identificadas algumas limitações:
 Foi produzido um vídeo demonstrando o funcionamento da solução e os principais resultados encontrados durante o desenvolvimento.
 
 **YouTube — vídeo não listado:**  
-`[INSERIR LINK DO VÍDEO AQUI]`
+`https://youtu.be/yx1YA9DjuAY`
 
 ---
 
