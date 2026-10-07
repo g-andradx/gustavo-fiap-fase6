@@ -24,11 +24,108 @@ O projeto foi dividido em experimentos utilizando diferentes abordagens de Visã
 
 ---
 
+## 📁 Estrutura do repositório
+
+O repositório foi organizado para separar o notebook principal, os datasets utilizados pelo YOLO e pela CNN e as imagens destinadas aos testes.
+
+```text
+📦 Projeto
+│
+├── 📄 README.md
+│
+├── 📓 GustavoSobrenome_rmXXXXX_pbl_fase6.ipynb
+│
+├── 📁 data/
+│   ├── 📄 objetos.yaml
+│   │
+│   ├── 📁 train/
+│   │   ├── images/
+│   │   └── labels/
+│   │
+│   ├── 📁 val/
+│   │   ├── images/
+│   │   └── labels/
+│   │
+│   └── 📁 test/
+│       ├── images/
+│       └── labels/
+│
+├── 📁 dados/
+│   ├── 📁 carro/
+│   └── 📁 tenis/
+│
+└── 📁 testes/
+    ├── imagens de teste da CNN
+    └── ...
+```
+
+### 📄 README.md
+
+Arquivo principal de documentação do projeto, contendo a descrição da solução, organização do repositório, resultados obtidos e conclusões dos experimentos.
+
+### 📓 Notebook `.ipynb`
+
+Contém a implementação completa do projeto, incluindo preparação dos dados, treinamento dos modelos, validação, testes, métricas e análises realizadas durante o desenvolvimento.
+
+### 📁 `data/` — Dataset utilizado pelo YOLO
+
+A pasta `data` contém o conjunto de dados preparado especificamente para o treinamento, validação e teste do YOLO.
+
+O dataset possui:
+
+- **70 imagens de carros**
+- **70 imagens de tênis**
+- **140 imagens no total**
+
+Essas imagens foram distribuídas entre:
+
+| Conjunto | Carros | Tênis | Total |
+|---|---:|---:|---:|
+| `train` | **[56]** | **[56]** | **[112]** |
+| `val` | **[7]** | **[7]** | **[14]** |
+| `test` | **[7]** | **[7]** | **[14]** |
+| **Total** | **70** | **70** | **140** |
+
+Cada divisão possui as imagens e suas respectivas rotulações utilizadas pelo YOLO.
+
+O arquivo **`objetos.yaml`** contém as configurações necessárias para que o YOLO localize os conjuntos de treinamento, validação e teste, além da definição das classes utilizadas pelo modelo:
+
+- `carro`
+- `tenis`
+
+### 📁 `dados/` — Imagens utilizadas pela CNN
+
+A pasta `dados` contém as imagens organizadas por classe para utilização durante o treinamento da CNN.
+
+```text
+dados/
+├── carro/
+└── tenis/
+```
+
+Ela contém:
+
+- **70 imagens de carros**
+- **70 imagens de tênis**
+- **140 imagens no total**
+
+Essa organização por diretórios permite que as imagens sejam associadas às suas respectivas classes durante o carregamento do dataset para treinamento da CNN.
+
+### 📁 `test/` — Testes exclusivos da CNN
+
+A pasta `test` contém **imagens separadas exclusivamente para testar a CNN após o treinamento**.
+
+Essas imagens permitem avaliar o comportamento do modelo em exemplos utilizados especificamente na etapa de teste, incluindo imagens diferentes das utilizadas nos testes do YOLO.
+
+---
+
 ## 📂 Dataset
 
 O conjunto de dados foi construído utilizando imagens das classes **carro** e **tênis**.
 
-As imagens foram separadas entre conjuntos destinados ao treinamento, validação e teste dos modelos.
+Foram utilizadas **70 imagens de cada classe**, totalizando **140 imagens**.
+
+Para o YOLO, essas imagens foram distribuídas entre os conjuntos de treinamento (`train`), validação (`val`) e teste (`test`).
 
 Durante a construção do dataset, foi observada uma diferença importante entre as classes. Nas imagens de carros, normalmente havia apenas um objeto principal por imagem. Já algumas imagens de tênis apresentavam vários tênis simultaneamente.
 
@@ -145,8 +242,6 @@ Uma abordagem futura possível seria utilizar **Transfer Learning**, aproveitand
 
 # 🔎 Comparação das abordagens
 
-Os experimentos mostraram diferenças importantes entre as abordagens utilizadas.
-
 | Característica | YOLO 40 épocas | YOLO 80 épocas | CNN do zero |
 |---|---|---|---|
 | Desempenho observado | Alto | **Melhor resultado** | Inferior ao YOLO |
@@ -192,15 +287,6 @@ Durante o desenvolvimento foram identificadas algumas limitações:
 
 ---
 
-# 📓 Notebook / Google Colab
-
-Todo o processo de preparação dos dados, treinamento, validação, testes e análise dos resultados está documentado no notebook do projeto.
-
-**Acessar o notebook:**  
-`[INSERIR LINK DO COLAB AQUI]`
-
----
-
 # 🎥 Vídeo demonstrativo
 
 Foi produzido um vídeo demonstrando o funcionamento da solução e os principais resultados encontrados durante o desenvolvimento.
@@ -212,7 +298,9 @@ Foi produzido um vídeo demonstrando o funcionamento da solução e os principai
 
 ## 👨‍💻 Autor
 
-**Gustavo [SOBRENOME]**  
-**RM:** [SEU RM]
+**Gustavo ANDRADE**  
+**RM:** 564102
+
+Projeto desenvolvido para a **FIAP — Inteligência Artificial — Fase 6**.
 
 Projeto desenvolvido para a **FIAP — Inteligência Artificial — Fase 6**.
