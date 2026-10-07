@@ -1,0 +1,9 @@
+train: /content/drive/MyDrive/dataset/images/train
+val: /content/drive/MyDrive/dataset/images/val
+test: /content/drive/MyDrive/dataset/images/test
+
+nc: 2
+
+names:
+  0: "carro"
+  1: "tenis"
